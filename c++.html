@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+<input type="text" id="searchInput" placeholder="Keresés..." onkeyup="searchContent()">
+
+<br><br>
+
+
+    
+    <div class="section"><h1>Hello World programsor</h1>
+    <hr>
+    <pre><code>
+    #include &lt;iostream&gt; 
+        int main(){
+            std::cout <<"hello world" << '\n';<br>
+            std::cout <<"fuck" << std::endl;<br>
+            return 0;
+        }
+    </pre></code>
+    <p class="comment">(a pont nem kell)<br></p>
+    <br>
+    <p class="comment">az std::cout-tal lehet új szöveget be írni<br>
+        két féle képpen lehet egy szöveget le zárni úgy hogy új sorba kerüljön 
+        az egyik a -->  '\n' a másik a --> std::endl;
+        <br>
+        <br>
+        mind a kettő ugyan azt a funkciót tölti be
+        <br> két féle képpen lehet kommentet írni az egyik a dupla per jel --> //<br>
+            a másik a -->  /* */, ezt akkor kell használni ha hosszú megjegyzést akkarunki írni vagy ha egy komplett parancsot szeretnék törölni, megjegyzésbe hagyni
+            
+    </p></div>
+
+    <div class="section"><h1>Matematika</h1>
+    <hr>
+    <pre><code>
+        #include &lt;iostream&gt; 
+
+        int main(){<br>
+            int x = 5;<br>
+            int y = 6;<br>
+            int sum = x + y;<br>
+        <br>
+            std::cout << x << '\n';<br>
+            std::cout << y << '\n';<br>
+            std::cout << sum << '\n';<br>
+        
+            int age = 21;<br>
+            int year = 2023;<br>
+            int days = 7.5;<br>
+        <br>
+
+            double price = 10.99;<br>
+            double gpa = 2.5;<br>
+            double temperature = 25.1;<br>
+        <br>
+
+            char grade = 'A';<br>
+           //char initial = 'BC';<br>
+            char initial = 'B';<br>
+        <br>
+      
+           
+            bool student = false;<br>
+            bool power = true;<br>
+            bool forSale = true;<br>
+       
+            std::string name = "Adam";<br>
+            std::string day = "Firday";<br>
+            std::string food = "pizza";<br>
+            std::string address = "123 Fake St.";<br>
+        <br>
+        
+            std::cout << "Hello " << name << '\n';<br>
+            std::cout << "You are " << age << " years old";<br>
+        <br>
+       
+            return 0;<br>
+   
+        }
+    </code></pre>
+    <p class="comment"> 
+        /*egyszerű összeadás<br>
+        /* ez a hosszabb, részletes verzio a szám be írásának<br>
+        int x;  //nyilatkozat<br>
+        x = 5;  //feladat<br>
+        //integer(whole number/egész számok) ha azt írom be napnak hogy, 7.5 csak a 7-et írja ki semmi többet, mert az int csak egész számokkal tud dolgozni<br>
+        //double (number including decimal) (szám, beleértve a tizedesjegyet)<br>
+        //singel character (egyedűli karakter), ha char-ba szeretnék 1 berűnél többet írni hiba ként írja ki, CSAK EGY KARAKTER LEHET EGYSZERRE<br>
+        //boolean (true or false) logikai vizsgála (igaz vagy hamis)<br>
+        // string (objects that represents a sequenece of text) (objektumok, amelyek egy szövegsorozatot képviselnek)<br>
+    </p></div>
+
+    <div class="section"><h1>Constant függvény</h1>
+    <hr>
+    <p class="comment"> <b>A const kulcsó azt jelzi hogy egy változó értéke állandó.</b><br>
+    <b>Megmondja a fordítónak hogy akadályozzon meg bármilyen módosítást.</b><br></p>
+    <pre><code>
+        #include <.iostream>
+
+        int main() {<br>
+        
+            
+        <br>
+            const double PI = 3.14159;<br>
+            //PI = 420.69; ki zárja ezt a programsort<br>
+            const int LIGHT_SPEED = 299792458;<br>
+            const int WIDTH = 1920;<br>
+            const int HEIGHT = 1080;<br>
+            //double radius = 10;<br>
+            //double circumference = 2 * PI * radius;<br>
+        <br>
+        <br>
+            std:: cout << PI << "cm";<br>
+        <br>
+            return 0;<br>
+        }
+    </code></pre>
+    <p class="comment">
+        // The const keyword specifies that a variable's valu is constant -- a const kulcsó azt jelzi hogy egy változó értéke állandó<br>
+        // tells the compiler to prevent anything from modifying it -- megmondja a fordítónak hogy akadályozza meg bármilyen módosítást<br>
+        //(read-only) -- (csak olvas)<br></p></div>
+    
+    <div class="section"><h1>Namespace (Névtér)</h1>
+    <hr>
+    <p>
+        #include <.iostream><br>
+<br>
+        namespace first{<br>
+            int x = 1;<br>
+        }<br>
+<br>
+        namespace secend{<br>
+            int x = 2;<br>
+        }<br>
+<br>
+        int main(){<br>
+            using namespace first;<br>
+        <br>
+            <p1>//Namespace = provides a solution for preventing name conflicts <br>
+            //              in large projects. Each entity needs a unique name<br>
+            //              A namespace allows for identically named entities as long<br>
+            //              as the namespace are different.<br>
+        <br>
+            /*<br>
+            Namespace = megoldást nyújt a névütközések megelőzésére nagy projektekben. Minden entitásnak egyedi névre van szüksége. A namespace lehetővé teszi az azonos nevű entitásokat, amennyiben a namespace különböző.<br>
+            */<br>
+           //ha namespace-nél megvan adva hogy mit használjon akkor elég csak az "x"-et megadni</p1><br>
+<br>
+            //std::cout << x; itt nullát (0) ír ki<br>
+            //std::cout << first::x; itt egyet (1) ír ki<br>
+        <br>
+            std::cout << x;<br>
+        <br>
+        <br>
+            return 0;<br>
+        }<br>
+    </p></div>
+    <div class="section"><h1>Typedef (Tipus definiálása) </h1>
+    <hr>
+    <p>
+        #include  <.iostream><br>
+        #include <.vector><br>
+        <br>
+        //typedef std::vector<.std::pair<.std::string, int>> pairlist_t;                                                                <br>
+        <p1>// definiálja hogy mi minek a röviditése, ebben az esetben a text-ett definálja</p1><br>
+        typedef std::string text_t;<br>
+        typedef int number_t;<br>
+        using text_t = std::string;<br>
+        using number_t = int;<br>
+        int main(){<br>
+        <br>
+           <p1> //typedef = reserved keyword used to create an additional name<br>
+            //          (alias) for another data type.<br>
+            //          New identifier for an existing type<br>
+            //          Helps with readability and reduces typos <br>
+            //          Use when there is a clear benefit<br>
+            //          Replaced with 'using' (work better with templates)<br>
+            /*<br>
+            typedef = foglalt kulcsszó, amelyet arra használnak, hogy egy másik adattípushoz további nevet (alias-t) hozzanak létre.<br>
+            Új azonosító egy meglévő típushoz<br>
+            Segít az olvashatóságban és csökkenti az elgépeléseket <br>
+            Használja, ha egyértelmű előnye van<br>
+            Felváltva a 'using'-gal (jobban működik sablonokkal)<br>
+                -----   Mind a kettő úgyan avval a funkcióval rendelkezik, de mégis a legtöbben a 'using'-ott használják    -----<br>
+            */</p1><br>
+        <br>
+                text_t firstName = "Adam";<br>
+                number_t age = 20;<br>
+                <p1>//itt adjuk meg hogy a "text_t" mihez tartozik</p1><br>
+        <br>
+                std::cout << firstName << "\n";<br>
+                std::cout << age << "\n";<br>
+        <br>
+        <br>
+            return 0;<br>
+        }<br>
+    </p></div>
+    <div class="section"><h1>Arithematic operator (Számítási operátor)</h1>
+    <hr>
+    <p>
+    #include <.iostream><br>
+<br>
+    int main(){<br>
+<br>
+        <p1>// arithemtic operators = return the result of a specific<br>
+        //                      arithemtic operator meaning (+ - * /)<br>
+<br>
+        /*<br>
+        aritmetikai operátorok = egy adott művelet eredményét adják vissza.<br>
+        aritmetikai operátor jelentése (+ - * /)<br>
+        */<br>
+        //parenthesis -- zárójel<br>
+        //muliplication & divison -- szorzás & osztás<br>
+        //addition & subtraction -- összeadás & kivonás<br></p1>
+<br>
+        int students = 20;<br>
+        <p2>//double students = 20;<br></p2>
+<br>
+        <p1>//students = students + 1;<br>
+        //evvel is meglehet adni a számítás egyik feltételét, de a következő rövidebb<br>
+        //students+=1; 1-el növeli a diákok számát<br>
+        //students++; szintén 1-el növeli a diákok számát<br>
+<br>
+        //tudents = students - 1; 1-el csökkenti a diákok számát<br>
+        //students-=1; szintén<br>
+        //students--; szintén<br>
+<br>
+        //students = students * 2; megszorozza a diákok számát 2-vel<br>
+        //students*=2;<br>
+<br>
+        //students = students / 2; el osztja 2-vel a diákok számát<br>
+        //students/=2;  szintién<br>
+<br>
+        //students/=3;<br>
+        //itt a diákok számát osztjuk el 3-mal, de nem írja ki hogy hány egész/hány tizedes<br>
+        //ezért be állítjuk hogy írja ki a teljes számot a "doubel"-val<br></p1>
+<br>
+        int remainder = students % 3;<br>
+        <p1>//ez a programsor ki írja hogy mennyi a maradék<br>
+        //például a 20 diákot 3fős csoportokra szedjük hágy fő nem lesz 3fős csoportban, ebben a példában 20fős osztályt 3 fős csoportra szedjük így 2fő lesz a maradék<br></p1>
+        <br>
+<br>
+        std::cout << remainder;<br>
+<br>
+<br>
+<br>
+        return 0;<br>
+    }
+
+    </p></div>
+    <div class="section"><h1>Type conversion</h1>
+    <hr>
+    <p>                                                                                                                 <br>
+        #include <.iostream>                                                                                            <br>        
+<br>
+        int main()<br>
+        {<br>
+            <p1>//type conversion = conversion a value of one data type to another<br>
+            //                  Implicit = automatic<br>
+            //                  Explicit = Precede value with new data type (int)<br>
+        <br>
+            /*<br>
+                type conversion =   típuskonverzió = egy adat típusú érték átalakítása egy másik típusra<br>
+                                    Implicit = automatikus<br>
+                                    Explicit = Az érték elé új adattípus (int)<br>
+            */<br>
+        <br>
+            //double x = (int) 3.14;<br>
+<br>
+            //char x = 100;     !ASCII TABLE!<br>
+            //std::cout << (char) 100;<br>
+        <br>
+        <br>
+        <br>
+            //A feladat, 10 kérdésből 8 lett jó, hágy százalékot ért el a diák?</p1><br>
+        <br>
+            int correct = 8;<br>
+            int questions = 10;<br>
+            double score = correct/(double)questions * 100;<br>
+        <br>
+            std::cout << score << "%";<br>
+        <br>
+        <br>
+            return 0;<br>
+        }
+    </p></div>
+    <div class="section"><h1>User input</h1>
+    <hr>
+    <p>
+        #include <.iostream>                                                                                                                <br>
+<br>
+        int main()<br>
+        {<br>
+            <p1>//cout << (insertion operator)   ----- beszúrási operátor<br>
+            // cin >> (extraction operator)  ----- kivonási operátor<br>
+        <br>
+            //Ez a programsor meg kérdezi mi a neved, te be tudod írni és köszön neked a te neveden.<br>
+            //a névnél például csak a kereszt nevedet tudod be írni és a vezeték nevedet nem<br>
+            //ezért hogy a teljes nevedett be tud írni a "getline()"-ba rakjuk</p1><br>
+            std::string name;<br>
+            int age;<br>
+        <br>
+            std::cout << "Mi a neved?:";<br>
+            std::getline(std::cin, name) ;<br>
+        <br>
+            std::cout << "Hany eves vagy?: ";<br>
+            std::cin >> age;<br>
+            <p1>//ha ezt a programsort előrébb rakjuk akkor a "getline()" prograba ezt kell be írnuk --> std::cin >> std::ws, name</p1><br>
+        <br>
+            std::cout << "hello " << name; '\n';<br>
+            std::cout << " Te " << age  << " eves vagy";<br>
+        <br>
+        <br>
+            return 0;<br>
+        }
+    </p></div>
+
+    <div class="section"><h1>Matematika mellék parancsok</h1>
+    <hr>
+    <p>
+        <p1>//C++ matemaikai számítás parancsokért nézd meg a <a href="https://cplusplus.com/reference/cmath/?kw=%3Ccmath%3E">www.cplusplus.com</a> weboldalt</p1><br>
+<br>
+        #include <.iostream><br>
+        #include <.cmath><br>
+        <br>
+        int main()<br>
+        {<br>
+            double x = 3.99;<br>
+            double y = 4;<br>
+            double z;<br>
+        <br>
+        <br>
+            <p1>//z = std::max(x, y);  --> ez a két szám közül a legnagyobbat írja ki<br>
+            //z = std::min(x, y);  --> ez a két szám közül a legkisebbet írja ki<br>
+            //z = pow(2, 3);  --> ez a program két számott az első a szám rendszer, a második a hatvány szám(2 a 3-ik on = 8-al)<br>
+            //z = sqrt(9);  --> ez a program gyököt von<br>
+            //z = abs(-3);  --> abszolút érték<br>
+            //z = round(x);  --> kerekítés<br>
+            //z = ceil(x);  --> felfelé kerekítés<br>
+            //z = floor(x); --> csak az egész számot nézi, a tizetes számokat nem <br></p1>
+        <br>
+            std:: cout << z;<br>
+        <br>
+            return 0;<br>
+        }
+    </p></div>
+
+    <div class="section"><h1>Pitagorasz tétel</h1>
+    <hr>
+    <p>
+        #include <.iostream><br>
+        #include <.cmath><br>
+        <br>
+        <br>
+        int main(){<br>
+        <br>
+            <p1>//pitagorasz tétel</p1><br>
+            double a;<br>
+            double b;<br>
+            double c;<br>
+        <br>
+            std::cout << "ird be az A oldalt: ";<br>
+            std::cin >> a;<br>
+        <br>
+            std::cout << "ird be az B oldalt: ";<br>
+            std::cin >> b;<br>
+        <br>
+            a = pow(a, 2);<br>
+            b = pow(b, 2);<br>
+            c = sqrt(a + b);<br>
+        <br>
+            std::cout <<"A C oldal: " << c;<br>
+        <br>
+        <br>
+            return 0;<br>
+        }
+    </p></div>
+
+    <div class="section"><h1>Ha függvény</h1>
+    <hr>
+    <p>
+        #include <.iostream><br>
+        #include <.cmath><br>
+        <br>
+        int main(){<br>
+            <p1>//if statements = do something if a condition is true.<br>
+            //                if not, then don't do it.<br>
+            /*ha fügvény = csináljon valamit ha a feltétel igaz.<br>
+                            ha nem, akkor ne csinálja*/<br></p1>
+        <br>
+        <br>
+            int age;<br>
+        <br>
+            std::cout << "Add meg az eletkorod: ";<br>
+            std::cin >> age;<br>
+        <br>
+            if(age >= 100){<br>
+                std::cout << "Mar halot vagy";<br>
+            }<br>
+            else if(age < 0){<br>
+                std::cout << "Nem szuletel meg";<br>
+            }<br>
+            else if(age >= 18){<br>
+                std::cout <<"Welcome";<br>
+            }
+            else{<br>
+                std::cout << "Nem johetsz be";<br>
+            }<br>
+            return 0;<br>
+        }<br>
+    </p></div>
+
+    <div class="section"><h1>Switch - változó</h1>
+    <hr>
+    <pre><code>
+    #include &lt;iostream&gt; <br>
+<br>
+    int main(){<br>
+<br>
+        int month;<br>
+        std::cout << "Adj meg egy honapot (1-12): ";<br>
+        std::cin >> month;<br>
+<br>
+        switch (month)<br>
+        {<br>
+        case 1:<br>
+            std::cout << "Januar";<br>
+            break;<br>
+        case 2:<br>
+            std::cout << "Februar";<br>
+            break;<br>
+        case 3:<br>
+            std::cout << "Marcius";<br>
+            break;<br>
+        case 4:<br>
+            std::cout << "Aprilis";<br>
+            break;<br>
+        case 5:<br>
+            std::cout << "Majus";<br>
+            break;<br>
+        case 6:<br>
+            std::cout << "Junius";<br>
+            break;<br>
+        case 7:<br>
+            std::cout << "Julius";<br>
+            break;<br>
+        case 8:<br>
+            std::cout << "Augusztus";<br>
+            break;<br>
+        case 9:<br>
+            std::cout << "Szeptember";<br>
+            break;<br>
+        case 10:<br>
+            std::cout << "Oktober";<br>
+            break;<br>
+        case 11:<br>
+            std::cout << "November";<br>
+            break;<br>
+        case 12:<br>
+            std::cout << "December";<br>
+            break;<br>
+        default:<br>
+            std::cout << "Kerlek szammal add meg a honapot (1-12) ";<br>
+            break;<br>
+        }<br>
+        return 0;<br>
+    }
+    </code></pre>
+<p class="comment">
+    switch = alternative to using many "else if" statments
+    compare one value aginst matching cases
+
+
+    switch = alternatiként használjuk amikor sok "else if"-et használunk
+             egy érték összehasonlítása a megfelelő esetekkel 
+</p></div>
+
+<div class="section"><h1>Simple Calculator</h1>
+<hr>
+<pre><code>
+    #include &lt;iostream&gt;
+        
+    int main (){
+    
+        char op;
+        double num1;
+        double num2;
+        double result;
+    
+        std::cout << "**********Calculator**********\n";
+    
+        std::cout << " Irjabe barmelyiket (+ - * /): ";
+        std::cin >> op;
+    
+        std::cout << "Elso szam: ";
+        std::cin >> num1;
+    
+        std::cout << "Masodik szam: ";
+        std::cin >> num2;
+    
+        switch (op)
+        {
+        case '+':
+            result = num1 + num2;
+            std::cout <<"Eredmeny: " << result << '\n';
+            break;
+        case '-':
+            result = num1 - num2;
+            std::cout <<"Eredmeny: " << result << '\n';
+            break;
+        case '*':
+            result = num1 * num2;
+            std::cout <<"Eredmeny: " << result << '\n';
+            break;
+        case '/':
+            result = num1 / num2;
+            std::cout <<"Eredmeny: " << result << '\n';
+            break;
+        
+        default:
+            std::cout << "Ervenytelen adat";
+            break;
+        }
+    
+        std::cout << "******************************";
+    
+    
+    
+    
+        return 0;
+    }
+
+</code></pre></div>
+
+<div class="section"><h1>Ternary operator == Ha függvény</h1>
+<hr>
+<pre><code>
+    #include <iostream>
+
+    int main()
+    {
+        // ternary operator ?: = replacement to an if/else statmanet
+        // condition ? experssion1 : experession2;
+        
+
+        // ternáris operátor ?: = helyettesítés egy if/else utasításhoz
+        // feltétel ? kifejezés1 : kifejezés2;
+
+        //int grade = 55;
+
+        //grade >= 60 ? std::cout << "You pass!" : std::cout << "You fail!";
+
+        //int number = 9;
+        //number % 2 ? std::cout << "ODD" : std::cout << "EVEN";
+
+        bool hungry = true;
+
+        hungry ? std::cout <<"Ehes vagy" : std::cout <<"Tele vagy";
+
+
+
+        return 0;
+    }
+</pre></code>
+    <p class="comment">
+    ternary operator ?: = replacement to an if/else statmanet<br>
+    condition ? experssion1 : experession2;<br>
+<br>
+    ternáris operátor ?: = helyettesítés egy if/else utasításhoz<br>
+    feltétel ? kifejezés1 : kifejezés2;<br>
+    </p></div>
+
+
+    <div class="section"><h1>Logikai vizsgálat</h1>
+    <hr>
+    <pre><code>
+        #include <iostream>
+
+        int main()
+        {
+            
+        
+            //&& 
+        
+            /*int temp;
+            std::cout << "Enter the tempreature: ";
+            std::cin >> temp;
+        
+            if(temp > 0 && temp < 30){
+                std::cout << "The temperature is good!";
+            }
+            else{
+                std::cout << "The temperature is bad!";
+            }
+            */
+        
+        
+            // ||
+        
+            /*int temp;
+            std::cout << "Enter the tempreature: ";
+            std::cin >> temp;
+        
+            if(temp <= 0 || temp >= 30){
+                std::cout << "The temperature is bad!";
+            }
+            else{
+                std::cout << "The temperature is good!";
+            }
+            */
+        
+        
+            int temp;
+            bool sunny = false;
+        
+            std::cout << "Enter the tempreature: ";
+            std::cin >> temp;
+        
+            if(temp <= 0 || temp >= 30){
+                std::cout << "The temperature is bad!\n";
+            }
+            else{
+                std::cout << "The temperature is good!\n";
+            }
+        
+            if(!sunny){
+                std::cout << "It is cloudy outside!";
+            }
+            else{
+                std::cout << "It is sunny outside!";
+            }
+        
+            return 0;
+        }
+    </code></pre>
+    <p class="comment">
+            && = check if two conditions are true<br>
+             || = chech if at least one of two condiotons is true<br>
+             ! = reverses the logical state of its operator<br>
+    </p></div>
+
+
+<script>
+function searchContent() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+
+    // Az összes szekció kiválasztása
+    let sections = document.querySelectorAll("h1, p, pre");
+
+    sections.forEach(section => {
+        let text = section.textContent.toLowerCase();
+
+        if(text.includes(input)) {
+            section.style.display = "";
+        } else {
+            section.style.display = "none";
+        }
+    });
+}
+</script>
+</body>
+</html>

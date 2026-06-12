@@ -1,0 +1,16 @@
+import itertools
+import time
+import sys
+
+def loading_spinner(mp=3):
+    spinner = itertools.cycle(["|", "/", "-", "\\"])
+    end_time = time.time() + mp
+    
+    while time.time() < end_time:
+        sys.stdout.write("\rBetöltés " + next(spinner))
+        sys.stdout.flush()
+        time.sleep(0.1)
+
+    print("\rKész!       ")
+
+loading_spinner(5)
